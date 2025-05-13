@@ -38,7 +38,7 @@ function App() {
       <main>
         <div className="container">
           <div className="row">
-            {actors.map((actor) => {
+            {allActors.map((actor) => {
               return (
                 <div key={actor.id} className='card col-4'>
                   <img src={actor.image} alt="" />
