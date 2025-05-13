@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
+import React from 'react'
 
 function App() {
   const [actors, setActors] = useState([])
@@ -8,12 +9,14 @@ function App() {
   const fetchActors = () => {
     axios
     .get("https://lanciweb.github.io/demo/api/actresses/")
-    .then((res) => setActors(res.data))
+    .then((res) => {
+      setActors(res.data)
+      console.log(res.data)
+    })
   };
   
   useEffect(() => {
     fetchActors()
-    console.log(actors)
   }, [])
 
   return (
